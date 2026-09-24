@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แดชบอร์ด | Supabase Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span> Supabase Demo</div>
+    <div class="account"><span id="user-email" class="user-email"></span><button id="logout-button" type="button" class="ghost">ออกจากระบบ</button></div>
+  </header>
+  <main class="dashboard" id="dashboard-content" hidden>
+    <div class="heading"><div><span class="eyebrow dark">YOUR WORKSPACE</span><h1>แดชบอร์ด</h1><p class="muted">ทดสอบการส่งและรับข้อมูลจาก Supabase</p></div><span class="live-pill"><span class="dot"></span> เชื่อมต่อด้วยบัญชีของคุณ</span></div>
+    <section class="stats" aria-label="สรุปข้อมูล">
+      <div class="stat-card"><span>ข้อความทั้งหมด</span><strong id="total-count">0</strong><small>รายการที่บัญชีนี้มองเห็น</small></div>
+      <div class="stat-card"><span>อัปเดตล่าสุด</span><strong id="last-updated" class="stat-date">—</strong><small>จากข้อมูลในตาราง demo_notes</small></div>
+    </section>
+    <div class="grid">
+      <section class="panel composer" aria-labelledby="form-title">
+        <span class="section-kicker">WRITE</span><h2 id="form-title">เพิ่มข้อความ</h2>
+        <p class="muted">บันทึกข้อมูลเข้าตาราง <code>demo_notes</code></p>
+        <form id="note-form"><label for="note-message">ข้อความ</label><textarea id="note-message" maxlength="500" rows="5" placeholder="พิมพ์ข้อความสำหรับทดสอบ..." required></textarea><div class="form-actions"><button id="cancel-edit" class="ghost" type="button" hidden>ยกเลิก</button><button id="save-button" class="primary" type="submit">บันทึกข้อความ</button></div></form>
+        <p id="note-status" class="status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel notes" aria-labelledby="notes-title">
+        <div class="notes-header"><div><span class="section-kicker">ACTIVITY</span><h2 id="notes-title">ข้อความของฉัน</h2></div><button id="refresh-button" class="ghost" type="button">↻ รีเฟรช</button></div>
+        <p id="list-status" class="status" role="status" aria-live="polite"></p>
+        <ul id="note-list" class="note-list" aria-live="polite"></ul>
+      </section>
+    </div>
+  </main>
+  <div id="loading" class="loading" role="status">กำลังตรวจสอบการเข้าสู่ระบบ…</div>
+</body>
+</html>
