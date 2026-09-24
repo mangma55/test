@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GitHub HTML Test</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #f0f6fc;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 650px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #58a6ff;
+    }
+
+    .status {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background: #0d4429;
+      border: 1px solid #238636;
+      color: #7ee787;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 20px;
+      background: #238636;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2ea043;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #21262d;
+      border-radius: 8px;
+      min-height: 50px;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #8b949e;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>🚀 GitHub HTML Test</h1>
+
+    <p>
+      ถ้าคุณเห็นหน้านี้ แสดงว่าไฟล์ HTML สามารถโหลดได้เรียบร้อย
+    </p>
+
+    <div class="status">
+      ✓ HTML ทำงานปกติ<br>
+      ✓ CSS ทำงานปกติ
+    </div>
+
+    <button onclick="testJavaScript()">
+      ทดสอบ JavaScript
+    </button>
+
+    <div id="result">
+      กดปุ่มด้านบนเพื่อทดสอบ JavaScript
+    </div>
+
+    <footer>
+      GitHub Pages Test Page
+    </footer>
+
+  </div>
+
+  <script>
+    function testJavaScript() {
+      const now = new Date();
+
+      document.getElementById("result").innerHTML = `
+        ✅ JavaScript ทำงานปกติ<br><br>
+        เวลาเครื่อง: ${now.toLocaleString("th-TH")}
+      `;
+    }
+
+    console.log("GitHub HTML Test Loaded!");
+  </script>
+
+</body>
+</html>
