@@ -26,7 +26,7 @@
   if (!config || !/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(config.url) ||
       config.url.includes("YOUR_PROJECT_ID") || !config.publishableKey ||
       !isPublicKey(config.publishableKey)) {
-    showSetupError("กรุณาใส่ Project URL และ Publishable key ใน js/config.js ก่อนใช้งาน");
+    showSetupError("กรุณาใส่ Project URL และ Publishable key ใน config.js ก่อนใช้งาน");
     return;
   }
   if (!window.supabase) {
